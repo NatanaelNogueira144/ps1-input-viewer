@@ -1,0 +1,493 @@
+/* General */
+body {
+    -webkit-font-smoothing: none;
+    align-items: center;
+    background-color: black;
+    color: white;
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    font-size: 40px;
+    font-smooth: never;
+    justify-content: center;
+    line-height: 20px;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    width: 100vw;
+}
+
+/* Gamepad Areas */
+
+.gamepad {
+    position: relative;
+    left: -199px;
+}
+
+.l2-r2-area {
+    position: relative;
+    left: 26px;
+}
+
+.l1-r1-area {
+    position: relative;
+    left: 26px;
+    top: 48px;
+}
+
+.d-pad-area {
+    position: relative;
+    top: 100px;
+    left: 0px;
+}
+
+.select-start-area {
+    position: relative;
+    top: 144px;
+    left: 144px;
+}
+
+.buttons-area {
+    position: relative;
+    left: 270px;
+    top: 92px;
+}
+
+/* Icons */
+
+.icon {
+    position: absolute;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+/* L and R Buttons */
+
+.icon.l2-button, .icon.r2-button {
+    font-style: normal;
+    border-radius: 5px;
+    padding: .2em;
+    background-image: linear-gradient(#5f5e60, #3C3D3F);
+    will-change: box-shadow;
+    box-shadow: 0px 2px 5px black;
+    border-radius: 50% 50% 5px 5px;
+    height: 25px;
+    width: 40px;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.icon.r2-button {
+    left: 280px;
+}
+
+.icon.l2-button::after {
+    font-size: .5em;
+    content: 'L2';
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    padding: .8em 0 0 .5em;
+}
+
+.icon.r2-button::after {
+    font-size: .5em;
+    content: 'R2';
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    padding: .8em 0 0 .5em;
+}
+
+.icon.l1-button, .icon.r1-button {
+    font-style: normal;
+    border-radius: 5px;
+    padding: .2em;
+    background-image: linear-gradient(#5f5e60, #3C3D3F);
+    will-change: box-shadow;
+    box-shadow: 0px 2px 5px black;
+    height: 20px;
+    width: 40px;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.icon.r1-button {
+    left: 280px;
+}
+
+.icon.l1-button::after {
+    font-size: .5em;
+    content: 'L1';
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    padding: .5em 0 0 .5em;
+}
+
+.icon.r1-button::after {
+    font-size: .5em;
+    content: 'R1';
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    padding: .5em 0 0 .5em;
+}
+
+.icon.l2-button.active-input, 
+.icon.r2-button.active-input, 
+.icon.l1-button.active-input, 
+.icon.r1-button.active-input {
+    background-image: linear-gradient(rgb(227, 165, 19), #e38213ff);
+}
+
+/* D-Pad Arrows */
+
+.icon.arrow-left, 
+.icon.arrow-up, 
+.icon.arrow-down, 
+.icon.arrow-right {
+    background-image: linear-gradient(#504f51, #3C3D3F);
+    outline: 0;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 28.1px;
+    box-shadow: 0px 2px 5px black;
+}
+
+.icon.arrow-left {
+    top: 40px;
+    left: 64px;
+    margin-left: 16px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-image: linear-gradient(to right, #504f51, #3C3D3F);
+}
+
+.icon.arrow-left::after {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-color: rgba(136, 183, 213, 0);
+    border-right-color: #504f51;
+    border-width: 16px;
+    margin-top: -16px;
+}
+
+.icon.arrow-right {
+    top: 40px;
+    margin-right: 16px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-image: linear-gradient(to left, #504f51, #3C3D3F);
+}
+
+.icon.arrow-right::after {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-color: rgba(136, 183, 213, 0);
+    border-left-color: #504f51;
+    border-width: 16px;
+    margin-top: -16px;
+}
+
+.icon.arrow-down {
+    left: 40px;
+    margin-bottom: 5px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.icon.arrow-down::after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-color: rgba(136, 183, 213, 0);
+    border-top-color: #3C3D3F;
+    border-width: 14px;
+    margin-left: -14px;
+}
+
+.icon.arrow-up {
+    top: 74px;
+    left: 40px;
+    margin-top: 5px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.icon.arrow-up::after {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-color: rgba(136, 183, 213, 0);
+    border-bottom-color: #504f51;
+    border-width: 14px;
+    margin-left: -14px;
+}
+
+.icon.arrow-left.active-input::after {
+    border-right-color: rgb(227, 151, 19);
+} 
+
+.icon.arrow-up.active-input::after {
+    border-bottom-color: rgb(227, 151, 19);
+}
+
+.icon.arrow-down.active-input::after {
+    border-top-color: rgb(227, 151, 19);
+}
+
+.icon.arrow-right.active-input::after {
+    border-left-color: rgb(227, 151, 19);
+}
+
+.icon.arrow-left.active-input, 
+.icon.arrow-up.active-input, 
+.icon.arrow-down.active-input, 
+.icon.arrow-right.active-input {
+    background-image: linear-gradient(rgb(227, 165, 19), #e38213ff);
+}
+
+/* Start and Select Buttons */
+
+.icon.start-button {
+    left: 60px;
+    font-style: normal;
+    outline: 0;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 42px;
+    height: 26px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 13.4px 0 13.4px 42px;
+    border-color: transparent transparent transparent #3C3D3F;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.icon.start-button.start-label::before {
+    font-size: .35em;
+    content: 'START';
+    position: absolute;
+    top: 11px;
+    left: -44px;
+    padding: 0 0 0 0;
+}
+
+.icon.select-button {
+    font-style: normal;
+    background-image: linear-gradient(#504f51, #3C3D3F);
+    outline: 0;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 42px;
+    height: 26px;
+    box-shadow: 0px 2px 5px black;
+    border-radius: 4px;
+}
+
+.icon.select-button.select-label::before {
+    font-size: .35em;
+    content: 'SELECT';
+    position: absolute;
+    top: 24px;
+    left: -6px;
+}
+
+.icon.start-button.active-input {
+    border-color: transparent transparent transparent rgb(227, 151, 19);
+}
+
+.icon.select-button.active-input {
+    background-image: linear-gradient(rgb(227, 165, 19), #e38213ff);
+}
+
+/* Action Buttons */
+
+.icon.x-button {
+    left: 40px;
+    top: 80px;
+    border-radius: 50px;
+    padding: .201em;
+    background-image: linear-gradient(#5f5e60, #3C3D3F);
+    will-change: box-shadow;
+    box-shadow: 0px 2px 5px black;
+    outline: 0;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 1.207387px;
+}
+
+.icon.x-button::before {
+    content: '';
+    position: absolute;
+    border: 2px solid #9DA5D5;
+    top: 21.4px;
+    left: 5px;
+    right: 5px;
+    transform: rotate(45deg);
+    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+.icon.x-button::after {
+    content: '';
+    position: absolute;
+    border: 2px solid #9DA5D5;
+    top: 21.4px;
+    left: 5px;
+    right: 5px;
+    transform: rotate(135deg);
+    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+.icon.triangle-button {
+    left: 40px;
+    border-radius: 50px;
+    padding: .201em;
+    background-image: linear-gradient(#5f5e60, #3C3D3F);
+    will-change: box-shadow;
+    box-shadow: 0px 2px 5px black;
+    outline: 0;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 1.1px;
+}
+
+.icon.triangle-button::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 0px;
+    left: 5px;
+    right: 5px;
+    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 19px;
+    border-left-width: 19px;
+    border-bottom: 30px solid #20AF93;
+}
+
+.icon.triangle-button::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    bottom: 0px;
+    left: 12px;
+    right: 0px;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 12px;
+    border-left-width: 12px;
+    border-bottom: 19px solid #47484A;
+}
+
+.icon.square-button {
+    top: 40px;
+    border-radius: 50px;
+    padding: .201em;
+    background-image: linear-gradient(#5f5e60, #3C3D3F);
+    will-change: box-shadow;
+    box-shadow: 0px 2px 5px black;
+    outline: 0;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 1.1px;
+}
+
+.icon.square-button::before {
+    content: '';
+    position: absolute;
+    border: 4px solid #D592BD;
+    top: 9px;
+    bottom: 9px;
+    left: 9px;
+    right: 9px;
+    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+.icon.circle-button {
+    left: 80px;
+    top: 40px;
+    border-radius: 50px;
+    padding: .201em;
+    background-image: linear-gradient(#5f5e60, #3C3D3F);
+    will-change: box-shadow;
+    box-shadow: 0px 2px 5px black;
+    outline: 0;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 1.2px;
+}
+
+.icon.circle-button::before {
+    content: '';
+    position: absolute;
+    border: 4px solid #E94B0E;
+    border-radius: 50px;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+.icon.x-button.active-input, 
+.icon.triangle-button.active-input, 
+.icon.circle-button.active-input, 
+.icon.square-button.active-input {
+    background-image: linear-gradient(rgb(227, 165, 19), #e38213ff);
+}
+
+.icon.triangle-button.active-input::after {
+    border-bottom: 19px solid rgb(227, 151, 19);
+}
