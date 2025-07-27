@@ -23,7 +23,7 @@ const mappedAxes = {
 };
 
 setInterval(() => {
-    if(navigator.getGamepads()) gamepad = navigator.getGamepads()[1];
+    if(navigator.getGamepads()) gamepad = navigator.getGamepads().find(elem => elem instanceof Gamepad && elem.index === 1);
 
     if(gamepad) {
         gamepad.buttons.forEach((button, index) => {
